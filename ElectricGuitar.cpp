@@ -1,7 +1,5 @@
-#include "PCH.h"
-#include "ELECGUITAR.h"
+#include "ElectricGuitar.h"
 #include <limits>
-
 #include <fstream>
 
 void ElectricGuitar::Modyfie()
@@ -86,3 +84,4 @@ void ElectricGuitar::SaveToFile(ofstream& os)
 {
 	os << *this;
 }
+

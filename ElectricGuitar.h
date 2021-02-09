@@ -1,11 +1,12 @@
 #pragma once
-#include "GUITAR.h"
+#include "Guitar.h"
 
 class ElectricGuitar : public Guitar
 {
 private:
-    double power;
-    PickUp converter;
+	double power;
+	PickUp converter;
+
 public:
 	ElectricGuitar() {}
 	~ElectricGuitar() {}

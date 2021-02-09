@@ -1,7 +1,5 @@
-﻿#include "PCH.h"
-#include "INSTRUMENT.h"
+#include "Instrument.h"
 #include <fstream>
-
 
 
 Instrument::Instrument(const string& br, float pr, float we, unsigned int y)
@@ -12,7 +10,7 @@ Instrument::Instrument(const string& br, float pr, float we, unsigned int y)
 	year = y;
 }
 
-ostream& operator<<(ostream& os,const Instrument& ins)
+ostream& operator<<(ostream& os, const Instrument& ins)
 {
 	os << ins.brand << endl;
 	os << ins.price << endl;
@@ -25,7 +23,7 @@ istream& operator>>(istream& is, Instrument& ins)
 {
 	is >> ins.brand >> ins.price >> ins.weight >> ins.year;
 	return is;
-	
+
 }
 
 Instrument& Instrument::operator=(const Instrument& ins)
@@ -36,4 +34,3 @@ Instrument& Instrument::operator=(const Instrument& ins)
 	year = ins.year;
 	return *this;
 }
-

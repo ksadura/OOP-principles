@@ -1,16 +1,16 @@
-#include "PCH.h"
-#include "PICKUP.h"
+#include "PickUp.h"
 
-void PickUp::SetParameters(int mag,int sol)
+void PickUp::SetParameters(int mag, int sol)
 {
-	quantity_of_magnets = mag;
-	quantity_of_solenoids = sol;
+	noMagnets = mag;
+	noSolenoids = sol;
 
 }
 
 PickUp& PickUp::operator+=(int n)
 {
-	quantity_of_magnets += n;
-	quantity_of_solenoids += n;
+	noMagnets += n;
+	noSolenoids += n;
+
 	return *this;
 }

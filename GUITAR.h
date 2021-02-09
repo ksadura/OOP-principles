@@ -1,18 +1,18 @@
 #pragma once
-#include "INSTRUMENT.h"
-#include "PICKUP.h"
-#include "SOUNDBOX.h"
+#include "Instrument.h"
+#include "PickUp.h"
+#include "Soundbox.h"
 
 
-///Klasa Guitar 
-/**Dziedziczy po klasie Instrument*/
 class Guitar : public Instrument
 {
 private:
-	int number_of_chords;///<liczba strun
-	Soundbox body;///<pudlo rezonansowe
+	int number_of_chords; ///<liczba strun
+	Soundbox body; ///<pudlo rezonansowe
+
 protected:
-	string color;///<kolor gitary
+	string color; ///<kolor gitary
+
 public:
 	///Konstruktor domyslny
 	Guitar() {}
@@ -42,5 +42,6 @@ public:
 	void ChangeTune();
 	///Funkcja zmienniajaca parametry podobiektu
 	void ChangeBox();
+
 };
 

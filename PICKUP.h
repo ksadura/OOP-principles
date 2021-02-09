@@ -5,15 +5,16 @@
 class PickUp
 {
 private:
-	int quantity_of_magnets;///<ilosc magnesow w przetworniku
-	int quantity_of_solenoids;///<ilosc cewek w przetworniku
+	int noMagnets; ///<ilosc magnesow w przetworniku
+	int noSolenoids; ///<ilosc cewek w przetworniku
+
 public:
 	///Funkcja ustawiajaca parametry
 	/**
 	\param qos - liczba cewek
 	\param qom - liczba magnesow
 	*/
-	void SetParameters(int qom,int qos);
+	void SetParameters(int qom, int qos);
 	///Operator +=
 	/**
 	\return referencja na klase PickUp

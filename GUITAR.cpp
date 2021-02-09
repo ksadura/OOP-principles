@@ -1,5 +1,4 @@
-#include "PCH.h"
-#include "GUITAR.h"
+#include "Guitar.h"
 #include <fstream>
 
 Guitar::Guitar(int noc, const string& co, const string& br, float pr, float we, unsigned int y) : Instrument(br, pr, we, y)
@@ -28,7 +27,7 @@ void Guitar::SaveToFile(ofstream& os)
 {
 	os << *this;
 }
-	
+
 
 istream& operator>>(istream& is, Guitar& gu)
 {
@@ -98,4 +97,3 @@ void Guitar::ChangeTune()
 	cin >> j;
 	*this += j;
 }
-

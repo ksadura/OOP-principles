@@ -1,5 +1,4 @@
-#include "PCH.h"
-#include "STICKS.h"
+#include "Drumsticks.h"
 
 Drumsticks::Drumsticks(float lg, const string& mat)
 {
@@ -9,7 +8,7 @@ Drumsticks::Drumsticks(float lg, const string& mat)
 
 ostream& operator<<(ostream& os, const Drumsticks& ds)
 {
-	os << ds.material <<endl;
+	os << ds.material << endl;
 	os << ds.length;
 	return os;
 

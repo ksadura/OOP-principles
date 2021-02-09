@@ -1,5 +1,4 @@
-#include "PCH.h"
-#include "DRUMS.h"
+#include "Drums.h"
 #include <fstream>
 
 Drums::Drums()
@@ -13,7 +12,7 @@ Drums& Drums::operator=(const Drums& ds)
 		return *this;
 	delete sticks;
 	sticks = nullptr;
-	number_of_drums = ds.number_of_drums;
+	noDrums = ds.noDrums;
 	Instrument::operator=(ds);
 	if (ds.sticks != nullptr)
 	{
@@ -27,7 +26,7 @@ Drums::Drums(const Drums& dr) : Instrument(dr)
 {
 	delete sticks;
 	sticks = nullptr;
-	number_of_drums = dr.number_of_drums;
+	noDrums = dr.noDrums;
 	if (dr.sticks != nullptr)
 	{
 		sticks = new Drumsticks();
@@ -39,38 +38,38 @@ Drums::~Drums()
 	if (sticks != nullptr)
 		delete sticks;
 }
-Drums::Drums(float len,const string& mat,int nod, const string& br, float pr, float we, unsigned int y) : Instrument(br, pr, we, y)
+Drums::Drums(float len, const string& mat, int nod, const string& br, float pr, float we, unsigned int y) : Instrument(br, pr, we, y)
 {
-	number_of_drums = nod;
+	noDrums = nod;
 	sticks = new Drumsticks(len, mat);
 }
 
 void Drums::Report() const
 {
-	
+
 	cout << *this << endl;
 
 }
 
 ostream& operator<<(ostream& os, const Drums& d)
 {
-	
+
 	if ((d.sticks) != nullptr)
 	{
 		os << "TRUE" << endl; // wypisanie pomocniczne
 		os << *(d.sticks) << endl;
 	}
-	else 
+	else
 	{
 		os << "FALSE" << endl; // wypisanie pomocnicze
 		os << d.warning << endl;
 	}
-	os << d.number_of_drums << endl;
+	os << d.noDrums << endl;
 	os << (Instrument&)d;
 	return os;
 }
 
-void Drums::SaveToFile(ofstream& os) 
+void Drums::SaveToFile(ofstream& os)
 {
 	os << *this;
 }
@@ -78,10 +77,10 @@ void Drums::SaveToFile(ofstream& os)
 istream& operator>>(istream& is, Drums& d)
 {
 	if (d.sticks != nullptr)
-		is >> *(d.sticks) >> d.number_of_drums >> (Instrument&)d;
-	else 
-		is >> d.warning >> d.number_of_drums >> (Instrument&)d;
-	
+		is >> *(d.sticks) >> d.noDrums >> (Instrument&)d;
+	else
+		is >> d.warning >> d.noDrums >> (Instrument&)d;
+
 	return is;
 }
 
@@ -89,7 +88,7 @@ void Drums::PrintFromFile(ifstream& is)
 {
 	is >> *this;
 }
-void Drums::AddSticks(float len,const string& m)
+void Drums::AddSticks(float len, const string& m)
 {
 	if (sticks == nullptr)
 		sticks = new Drumsticks(len, m);
@@ -117,7 +116,7 @@ void Drums::Modyfie()
 		if (sticks != nullptr)
 		{
 			cout << "Drumsticks have been already added" << endl;
-			
+
 		}
 		else
 		{

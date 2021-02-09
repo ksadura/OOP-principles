@@ -1,5 +1,4 @@
-﻿#include "PCH.h"
-#include "FUNCTIONS.h"
+#include "Functions.h"
 
 using namespace std;
 vector<Instrument*>tab;
@@ -7,13 +6,13 @@ int x;
 
 int main()
 {
-	tab.push_back(new Guitar (4,"DARK", "BRANDY", 125.99, 2.50, 2001));
-	tab.push_back(new ElectricGuitar (250, 5, "YELLOW", "BRANDR", 205.99, 1.99, 2009));
-	tab.push_back(new Drums (0.45,"PLASTIC",8, "BRANDZ", 1050.20, 120, 2008));
-	tab.push_back(new Drums (0.5,"WOOD",11, "BRANDK", 1100.99, 125.5, 2012));
-	tab.push_back(new Guitar (5,"BROWN", "BRANDX", 155.99, 2.90, 1999));
-	
-	cout << "Welcome"<< endl;
+	tab.push_back(new Guitar(4, "DARK", "BRANDY", 125.99, 2.50, 2001));
+	tab.push_back(new ElectricGuitar(250, 5, "YELLOW", "BRANDR", 205.99, 1.99, 2009));
+	tab.push_back(new Drums(0.45, "PLASTIC", 8, "BRANDZ", 1050.20, 120, 2008));
+	tab.push_back(new Drums(0.5, "WOOD", 11, "BRANDK", 1100.99, 125.5, 2012));
+	tab.push_back(new Guitar(5, "BROWN", "BRANDX", 155.99, 2.90, 1999));
+
+	cout << "Welcome" << endl;
 	cout << "1.Show products" << endl;
 	cout << "2.Delete certain product from the vector" << endl;
 	cout << "3.Add product to the vector" << endl;
@@ -23,7 +22,7 @@ int main()
 	cout << "7.Clear Container" << endl;
 	cout << "8.Quit the application" << endl;
 	cout << "Select a number : ";
-	
+
 
 	cin.exceptions(ifstream::failbit | ifstream::badbit);
 	while (true)
@@ -81,10 +80,9 @@ int main()
 		cout << "7.Clear Container" << endl;
 		cout << "8.Quit the application" << endl;
 		cout << "Select a number : ";
-		
-		
+
+
 	}
 
 	return 0;
 }
-

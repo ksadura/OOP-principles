@@ -1,9 +1,8 @@
-#include "PCH.h"
-#include "FUNCTIONS.h"
+#include "Functions.h"
 
 using namespace std;
 
-void DeleteProduct(vector<Instrument*>&tab)
+void DeleteProduct(vector<Instrument*>& tab)
 {
 	int k;
 	cin.exceptions(ifstream::failbit | ifstream::badbit);
@@ -38,7 +37,7 @@ void DeleteProduct(vector<Instrument*>&tab)
 	} while (true);
 }
 
-void AddProduct(vector<Instrument*>&tab)
+void AddProduct(vector<Instrument*>& tab)
 {
 	int l, s;
 	string brand;
@@ -78,7 +77,7 @@ void AddProduct(vector<Instrument*>&tab)
 
 	} while (true);
 
-	cout << "Which product do you want to insert? "<<endl<<"1.Guitar, 2.ElectricGuitar, 3.Drums" << endl;
+	cout << "Which product do you want to insert? " << endl << "1.Guitar, 2.ElectricGuitar, 3.Drums" << endl;
 	do
 	{
 		try
@@ -100,9 +99,9 @@ void AddProduct(vector<Instrument*>&tab)
 				cin >> weight;
 				cout << "Get no.Chords: ";
 				cin >> noch;
-				cout<<"Get year of production: ";
+				cout << "Get year of production: ";
 				cin >> year;
-				tab.insert(it + l, new Guitar(noch, color, brand,price , weight, year));
+				tab.insert(it + l, new Guitar(noch, color, brand, price, weight, year));
 				break;
 			case ElectricGuitars:
 				cout << "Get Brand [without space]: ";
@@ -136,7 +135,7 @@ void AddProduct(vector<Instrument*>&tab)
 				cin >> year;
 				cout << "Get no.Drums: ";
 				cin >> nodr;
-				tab.insert(it + l, new Drums(lenght, material,nodr, brand, price, weight, year));
+				tab.insert(it + l, new Drums(lenght, material, nodr, brand, price, weight, year));
 				break;
 			default:
 				cout << "Wrong input" << endl;
@@ -148,10 +147,10 @@ void AddProduct(vector<Instrument*>&tab)
 			cin.clear();
 			cin.ignore(numeric_limits<streamsize>::max(), '\n');
 		}
-	} while(s!=1 && s!=2 && s!=3);
+	} while (s != 1 && s != 2 && s != 3);
 }
 
-void ShowProducts(vector<Instrument*>&tab)
+void ShowProducts(vector<Instrument*>& tab)
 {
 	if (!(tab.empty()))
 	{
@@ -162,7 +161,7 @@ void ShowProducts(vector<Instrument*>&tab)
 		cout << "Container is empty" << endl;
 }
 
-void ClearContainer(vector<Instrument*>&tab)
+void ClearContainer(vector<Instrument*>& tab)
 {
 	if (!tab.empty())
 	{
@@ -173,67 +172,67 @@ void ClearContainer(vector<Instrument*>&tab)
 		tab.clear();
 	}
 }
-void GetFromFile(vector<Instrument*>&tab)
+void GetFromFile(vector<Instrument*>& tab)
 {
 	ClearContainer(tab);
-	string linia,check;
+	string linia, check;
 	int w;
 	ifstream plik;
-	plik.open("plik.txt", ios::in);
-		if (plik.good())
+	plik.open("Config.txt", ios::in);
+	if (plik.good())
+	{
+		plik >> w;
+		for (int i = 0; i < w; i++)
 		{
-			plik >> w;
-			for (int i = 0; i < w; i++)
+			plik >> linia;
+			if (linia == "G")
 			{
-				plik >> linia;
-				if (linia == "G")
-				{
-					Guitar *g = new Guitar();
-					g->PrintFromFile(plik);
-					tab.push_back(g);
+				Guitar* g = new Guitar();
+				g->PrintFromFile(plik);
+				tab.push_back(g);
 
-				}
-				else if (linia == "ELG")
+			}
+			else if (linia == "ELG")
+			{
+				ElectricGuitar* eg = new ElectricGuitar();
+				eg->PrintFromFile(plik);
+				tab.push_back(eg);
+			}
+			else if (linia == "D")
+			{
+				plik >> check;
+				if (check == "TRUE")
 				{
-					ElectricGuitar* eg = new ElectricGuitar();
-					eg->PrintFromFile(plik);
-					tab.push_back(eg);
+					Drums* d = new Drums();
+					d->PrintFromFile(plik);
+					tab.push_back(d);
 				}
-				else if (linia == "D")
+				else if (check == "FALSE")
 				{
-					plik >> check;
-					if (check == "TRUE")
-					{
-						Drums* d = new Drums();
-						d->PrintFromFile(plik);
-						tab.push_back(d);
-					}
-					else if (check == "FALSE")
-					{
-						Drums* d = new Drums();
-						d->DeleteSticks();
-						d->PrintFromFile(plik);
-						tab.push_back(d);
-					}
+					Drums* d = new Drums();
+					d->DeleteSticks();
+					d->PrintFromFile(plik);
+					tab.push_back(d);
 				}
 			}
-			plik.close();
 		}
+		plik.close();
+	}
 }
 
-void GetToFile(vector<Instrument*>&tab)
+void GetToFile(vector<Instrument*>& tab)
 {
 	Guitar* g;
 	ElectricGuitar* eg;
 	Drums* d;
 	if (!tab.empty())
-	{	
+	{
 		ofstream file;
-		file.open("plik.txt", ios::out | ios::app);
+		file.open("Config.txt", ios::out | ios::app);
 		if (file.good())
 		{
 			file << tab.size() << endl;
-			
+
 			for (int i = 0; i < tab.size(); ++i)
 			{
 				if (eg = dynamic_cast<ElectricGuitar*>(tab[i]))
@@ -246,7 +245,7 @@ void GetToFile(vector<Instrument*>&tab)
 					file << "G" << endl;
 					g->SaveToFile(file);
 				}
-				
+
 				else if (d = dynamic_cast<Drums*>(tab[i]))
 				{
 					file << "D" << endl;
@@ -258,7 +257,7 @@ void GetToFile(vector<Instrument*>&tab)
 	}
 }
 
-void Modyfication(vector<Instrument*>&tab)
+void Modyfication(vector<Instrument*>& tab)
 {
 	cin.exceptions(ifstream::failbit | ifstream::badbit);
 	int y;
