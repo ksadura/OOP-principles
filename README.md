@@ -9,10 +9,9 @@ This console UI app has been created to become familiar with fundamental rules o
 * Class type-casting
 * SDL library
 
-|![](./ClassHierarchy.png?style=centerme)|
-|:-------------------------:|
-|*Class hierarchy*|
-
+      <center><img src="./ClassHierarchy.png"></center>
+      <center>Class hierarchy</center>
+      
 To run application use ```RunApp.bat```
 
 **Author:**
