@@ -9,7 +9,7 @@ This console UI app has been created to become familiar with fundamental rules o
 * Class type-casting
 * SDL library
 
-|![](./ClassHierarchy.png)|
+|![](./Resources/ClassHierarchy.png)|
 |:-------------------------:|
 |*Class hierarchy*|
 

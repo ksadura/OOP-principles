@@ -1,2 +1,2 @@
 @ECHO off
-start ./Debug/PrinciplesOOP.exe
+start ./x64/Debug/PrinciplesOOP.exe

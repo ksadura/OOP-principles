@@ -1,9 +1,0 @@
-﻿  Functions.cpp
-C:\Users\kenic\Desktop\Studia\PROE\PrinciplesOOP\Functions.h(14,20): warning C4091: "": zignorowano na lewo od "std::vector<Instrument *,std::allocator<Instrument *>>" podczas gdy brak deklaracji zmiennej
-C:\Users\kenic\Desktop\Studia\PROE\PrinciplesOOP\Functions.cpp(15,19): warning C4018: ">=": niezgodność typu ze znakiem/bez znaku
-C:\Users\kenic\Desktop\Studia\PROE\PrinciplesOOP\Functions.cpp(62,19): warning C4018: ">": niezgodność typu ze znakiem/bez znaku
-C:\Users\kenic\Desktop\Studia\PROE\PrinciplesOOP\Functions.cpp(157,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\kenic\Desktop\Studia\PROE\PrinciplesOOP\Functions.cpp(168,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\kenic\Desktop\Studia\PROE\PrinciplesOOP\Functions.cpp(236,22): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\kenic\Desktop\Studia\PROE\PrinciplesOOP\Functions.cpp(271,19): warning C4018: ">=": niezgodność typu ze znakiem/bez znaku
-  PrinciplesOOP.vcxproj -> C:\Users\kenic\Desktop\Studia\PROE\PrinciplesOOP\Debug\PrinciplesOOP.exe
