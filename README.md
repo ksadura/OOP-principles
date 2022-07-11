@@ -10,7 +10,7 @@ This console UI app has been created to become familiar with fundamental rules o
 * Class type-casting
 * SDL library
 
-Depicted class hierarchy is in the ```~/Resources``` folder. **Remark:** This is one of my first programming projects, so several rookie mistakes can be found here e.g. bad variables naming.
+Depicted class hierarchy is in the ```~/Resources/ClassHierarchy.png``` file. **Remark:** This is one of my first programming projects, so several rookie mistakes can be found here e.g. bad variables naming.
 <!--
 |![](./Resources/ClassHierarchy.png)|
 |:-------------------------:|
@@ -21,6 +21,5 @@ Recommened environment: Visual Studio 2017+ (with C++ tools)
 - [X] Build solution within VS IDE so that ```~/x64/Debug``` folder is created
 - [X] To run application you can use ```RunApp.bat```
 
-**Author:**
-
-Krzysztof Sadura
+## Author
+Krzysztof Sadura, *May 2019*
